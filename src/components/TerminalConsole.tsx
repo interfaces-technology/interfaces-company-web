@@ -12,6 +12,7 @@ import {
   OPERATING_MODEL,
   STATUS,
 } from "@/data/content";
+import ThemeToggle from "@/components/ThemeToggle";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -151,7 +152,7 @@ export default function TerminalConsole() {
     });
   };
 
-  const handleNavHover = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleNavHover = (e: React.MouseEvent<HTMLElement>) => {
     const el = e.currentTarget;
     gsap.fromTo(
       el,
@@ -201,13 +202,19 @@ export default function TerminalConsole() {
               STATUS: ACTIVE · MODE: PUBLIC · {STATUS.location.toUpperCase()}
             </p>
           </div>
-          <a
-            href="#contact"
-            className="nav-item text-[12px] text-muted transition-colors"
-            onMouseEnter={handleNavHover}
-          >
-            [contact]
-          </a>
+          <div className="flex flex-wrap items-center justify-end gap-x-3 gap-y-1">
+            <ThemeToggle
+              className="nav-item text-[12px] text-muted transition-colors"
+              onHover={handleNavHover}
+            />
+            <a
+              href="#contact"
+              className="nav-item text-[12px] text-muted transition-colors"
+              onMouseEnter={handleNavHover}
+            >
+              [contact]
+            </a>
+          </div>
         </header>
 
         <nav
