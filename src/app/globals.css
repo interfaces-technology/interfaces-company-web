@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0b0b0b;
+  --bg-elevated: #101010;
+  --text: #f4f1e8;
+  --muted: #8a8a8a;
+  --line: #2a2a2a;
+  --accent: #ffb000;
+  --accent-dim: #a87400;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-dim: var(--accent-dim);
+  --font-mono: var(--font-terminal);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-terminal), ui-monospace, "Cascadia Code", "SF Mono",
+    Menlo, Consolas, monospace;
+  font-size: 14px;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 35%, transparent);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.cursor-blink {
+  display: inline-block;
+  width: 0.55ch;
+  height: 1.1em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background: var(--accent);
+  animation: blink 1.05s steps(1, end) infinite;
+}
+
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-blink {
+    animation: none;
+    opacity: 1;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+.noise {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.scanline {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 49;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 3px,
+    rgba(0, 0, 0, 0.08) 3px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+  opacity: 0.35;
+}
+
+.nav-item:hover,
+.nav-item:focus-visible {
+  color: var(--accent);
+  outline: none;
+}
+
+.nav-item:hover .nav-index,
+.nav-item:focus-visible .nav-index {
+  color: var(--accent);
+}
