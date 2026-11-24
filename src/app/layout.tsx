@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono } from "next/font/google";
-import { THEME_BOOT_SCRIPT } from "@/lib/theme";
 import "./globals.css";
 
 const terminal = IBM_Plex_Mono({
@@ -10,14 +9,14 @@ const terminal = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "The Interfaces Company",
+  title: "Interfaces — The Interfaces Company of Tomorrow",
   description:
-    "A human technology practice making crafted technology more accessible. Public terminal — proof of existence.",
+    "An independent human technology company building technology that expands human capability, creativity and agency.",
   metadataBase: new URL("https://interfaces.company"),
   openGraph: {
-    title: "The Interfaces Company",
+    title: "Interfaces — The Interfaces Company of Tomorrow",
     description:
-      "A human technology practice making crafted technology more accessible.",
+      "An independent human technology company building technology that expands human capability, creativity and agency.",
     type: "website",
   },
 };
@@ -28,16 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${terminal.variable} h-full`}
-      data-theme="dark"
-      suppressHydrationWarning
-    >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: THEME_BOOT_SCRIPT }} />
-      </head>
-      <body className="min-h-full font-mono antialiased">{children}</body>
+    <html lang="en" className={`${terminal.variable} h-full`}>
+      <body className="min-h-full">{children}</body>
     </html>
   );
 }
