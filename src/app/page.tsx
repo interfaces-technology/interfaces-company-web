@@ -18,13 +18,10 @@ export default function Home() {
           Tomorrow
         </h1>
         <p>
-          Interfaces is an independent human technology company. We research,
-          design and build technology that expands human capability, creativity
-          and agency. Technology does not simply help people do things. It
-          changes what people can do, how they think, what they value and who
-          they become. So we treat it as a human environment, and we make
-          products that people can understand, control and leave on reasonable
-          terms.
+          An independent human technology company. We research, design and
+          build technology that expands human capability, creativity and
+          agency, with products people can understand, control and leave on
+          reasonable terms.
         </p>
       </section>
 

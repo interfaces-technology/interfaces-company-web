@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  color-scheme: dark;
-  --bg: #000;
-  --fg: #fff;
-  --muted: #8a8a8a;
-  --line: #2a2a2a;
+  color-scheme: light;
+  --bg: #fff;
+  --fg: #000;
+  --muted: #6a6a6a;
+  --line: #d8d8d8;
 }
 
 * {
@@ -25,6 +25,7 @@ body {
     monospace;
   font-size: 14px;
   line-height: 1.7;
+  text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -57,18 +58,19 @@ a {
 
 .hero h1 {
   margin: 0;
-  font-size: clamp(36px, 9vw, 104px);
-  line-height: 1.02;
+  font-size: clamp(40px, 10.5vw, 160px);
+  line-height: 0.95;
   font-weight: 600;
   letter-spacing: -0.04em;
 }
 
 .hero p {
-  margin: 56px 0 0;
-  max-width: 58ch;
-  font-size: clamp(15px, 2vw, 18px);
-  line-height: 1.85;
-  color: #cfcfcf;
+  margin: 48px 0 0;
+  max-width: 40ch;
+  font-size: clamp(11px, 1.3vw, 13px);
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  color: var(--fg);
 }
 
 .foot {
@@ -103,6 +105,10 @@ a {
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-size: 11px;
+}
+
+.foot small {
+  text-align: center;
 }
 
 .foot a:hover,
