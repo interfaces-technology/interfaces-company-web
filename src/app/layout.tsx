@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Interfaces — The Interfaces Company of Tomorrow",
   description:
     "An independent human technology company building technology that expands human capability, creativity and agency.",
-  metadataBase: new URL("https://interfaces.company"),
+  metadataBase: new URL("https://theinterfaces.company"),
   openGraph: {
     title: "Interfaces — The Interfaces Company of Tomorrow",
     description:
